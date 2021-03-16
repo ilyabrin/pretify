@@ -5,10 +5,10 @@ import (
 	"log"
 )
 
-func Pretify(input interface{}) string {
-	result, err := json.MarshalIndent(input, "", "  ")
+func New(in interface{}) string {
+	out, err := json.MarshalIndent(in, "", "  ")
 	if err != nil {
 		log.Println(err)
 	}
-	return string(result)
+	return string(out)
 }
