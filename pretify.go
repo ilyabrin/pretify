@@ -5,7 +5,7 @@ import (
 	"log"
 )
 
-func New(in interface{}) string {
+func Json(in interface{}) string {
 	out, err := json.MarshalIndent(in, "", "  ")
 	if err != nil {
 		log.Println(err)
