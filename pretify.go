@@ -5,7 +5,7 @@ import (
 	"log"
 )
 
-func pretify(input interface{}) string {
+func Pretify(input interface{}) string {
 	result, err := json.MarshalIndent(input, "", "  ")
 	if err != nil {
 		log.Println(err)
