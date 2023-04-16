@@ -1,14 +1,19 @@
 package pretify
 
 import (
+	"bytes"
 	"encoding/json"
 	"log"
 )
 
-func Json(in interface{}) string {
-	out, err := json.MarshalIndent(in, "", "  ")
+func JSON(in interface{}) string {
+	if in == nil {
+		return ""
+	}
+	out, err := json.MarshalIndent(in, "", " ")
 	if err != nil {
 		log.Println(err)
+		return ""
 	}
-	return string(out)
+	return bytes.NewBuffer(out).String()
 }
